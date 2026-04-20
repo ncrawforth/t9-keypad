@@ -16,10 +16,10 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                &kp LC(LS(F1))  &kp LC(LS(F2))  &kp LC(LS(F3))
-                &kp LC(LS(F4))  &kp LC(LS(F5))  &kp LC(LS(F6))
-                &kp LC(LS(F7))  &kp LC(LS(F8))  &kp LC(LS(F9))
-                &kp LC(LS(F10)) &kp LC(LS(F11)) &kp LC(LS(F12))
+                &kp F13  &kp F14  &kp F15
+                &kp F16  &kp F17  &kp F18
+                &kp F19  &kp F20  &kp F21
+                &kp F22  &kp F23  &kp F24
             >;
         };
     };
