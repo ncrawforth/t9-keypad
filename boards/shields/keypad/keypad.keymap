@@ -1,16 +1,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                &kp N7       &kp N8       &kp N9
-                &kp N4       &kp N5       &kp N6
-                &kp N1       &kp N2       &kp N3
-                &bt BT_CLR   &kp N0       &bt BT_SEL 0
+                &kp LC(LS(F7))  &kp LC(LS(F8))  &kp LC(LS(F9))
+                &kp LC(LS(F4))  &kp LC(LS(F5))  &kp LC(LS(F6))
+                &kp LC(LS(F1))  &kp LC(LS(F2))  &kp LC(LS(F3))
+                &kp LC(LS(F10)) &kp LC(LS(F11)) &kp LC(LS(F12))
             >;
         };
     };
