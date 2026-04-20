@@ -9,7 +9,7 @@
                 &kp LC(LS(F7))  &kp LC(LS(F8))  &kp LC(LS(F9))
                 &kp LC(LS(F4))  &kp LC(LS(F5))  &kp LC(LS(F6))
                 &kp LC(LS(F1))  &kp LC(LS(F2))  &kp LC(LS(F3))
-                &kp LC(LS(F10)) &kp LC(LS(F11)) &kp LC(LS(F12))
+                &kp LC(LS(F10)) &kp LC(LS(F11)) &bt BT_CLR
             >;
         };
     };
