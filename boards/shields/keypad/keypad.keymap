@@ -20,7 +20,7 @@
             tapping-term-ms = <5000>;
             quick-tap-ms = <0>; // Prevents accidental repeats
             flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
-            bindings = <&kp>, <&kp>; // Hold action, then Tap action
+            bindings = <&bt>, <&kp>; // Hold action, then Tap action
         };
     };
 };
