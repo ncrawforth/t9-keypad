@@ -10,7 +10,16 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>; // Prevents accidental repeats
-            flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Space
+            flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
+            bindings = <&kp>, <&kp>; // Hold action, then Tap action
+        };
+        lht: long_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LONG_HOLD_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <5000>;
+            quick-tap-ms = <0>; // Prevents accidental repeats
+            flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
             bindings = <&kp>, <&kp>; // Hold action, then Tap action
         };
     };
@@ -23,8 +32,8 @@
             bindings = <
                 &ht F13 F13  &ht F14 F14  &ht F15 F15
                 &ht F16 F16  &ht F17 F17  &ht F18 F18
-                &ht F19 F19  &ht F20 F20  &ht F21 F21
-                &kp F22  &ht SPACE F23  &ht F24 F24
+                &lht BT_CLR_ALL F19  &ht F20 F20  &ht F21 F21
+                &kp F22  &ht F23 F23  &ht SPACE F24
             >;
         };
     };
