@@ -3,6 +3,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
+        // This macro takes 1 parameter and passes it to &bt
+        bt_macro: bt_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1at0>, <&bt 0>;
+        };
+    };
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -20,12 +28,9 @@
             tapping-term-ms = <5000>;
             quick-tap-ms = <0>; // Prevents accidental repeats
             flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
-            bindings = <&bt>, <&kp>; // Hold action, then Tap action
+            bindings = <&bt_macro>, <&kp>; // Hold action, then Tap action
         };
     };
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
         default_layer {
