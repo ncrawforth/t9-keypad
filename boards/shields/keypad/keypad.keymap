@@ -4,10 +4,19 @@
 
 / {
     behaviors {
-        f23sp: f23_space {
+        ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "F23_SPACE";
+            label = "HOLD_TAP";
             #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>; // Prevents accidental repeats
+            flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Space
+            bindings = <&kp>, <&kp>; // Hold action, then Tap action
+        };
+        nr: no_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NO_REPEAT";
+            #binding-cells = <1>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>; // Prevents accidental repeats
             flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Space
@@ -21,10 +30,10 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                &kp F13  &kp F14  &kp F15
-                &kp F16  &kp F17  &kp F18
-                &kp F19  &kp F20  &kp F21
-                &kp F22  &f23sp SPACE F23  &kp F24
+                &nr F13  &nr F14  &nr F15
+                &nr F16  &nr F17  &nr F18
+                &nr F19  &nr F20  &nr F21
+                &kp F22  &ht SPACE F23  &nr F24
             >;
         };
     };
