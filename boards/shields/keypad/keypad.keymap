@@ -7,8 +7,13 @@
         compatible = "zmk,combos";
         combo_bt_clr_all {
             timeout-ms = <50>;
-            key-positions = <9 11>; // * #
+            key-positions = <9 11>;
             bindings = <&bt BT_CLR_ALL>;
+        };
+        combo_a {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp A>;
         };
     };
 
