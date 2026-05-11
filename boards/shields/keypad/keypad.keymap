@@ -37,7 +37,7 @@
             bindings = <
                 &ht F13 F13  &ht F14 F14  &ht F15 F15
                 &ht F16 F16  &ht F17 F17  &ht F18 F18
-                &lht 0 F19  &ht F20 F20  &ht F21 F21
+                &pt 0 F19  &ht F20 F20  &ht F21 F21
                 &kp F22  &ht F23 F23  &ht SPACE F24
             >;
         };
