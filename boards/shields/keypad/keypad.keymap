@@ -13,7 +13,7 @@
         pin_macro: pin_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp 7>, <&kp 2>, <&kp 9>, <&kp 7>;
+            bindings = <&kp N7>, <&kp N2>, <&kp N9>, <&kp N7>;
         };
     };
     behaviors {
@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "PIN_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <5000>;
+            tapping-term-ms = <1000>;
             quick-tap-ms = <0>; // Prevents accidental repeats
             flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
             bindings = <&pin_macro>, <&kp>; // Hold action, then Tap action
