@@ -10,6 +10,11 @@
             #binding-cells = <0>;
             bindings = <&bt BT_CLR_ALL>;
         };
+        pin_macro: pin_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp 7>, <&kp 2>, <&kp 9>, <&kp 7>;
+        };
     };
     behaviors {
         ht: hold_tap {
@@ -21,7 +26,7 @@
             flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
             bindings = <&kp>, <&kp>; // Hold action, then Tap action
         };
-        pt: pair_tap {
+        pair: pair_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "PAIR_TAP";
             #binding-cells = <2>;
@@ -30,6 +35,15 @@
             flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
             bindings = <&bt_clear_macro>, <&kp>; // Hold action, then Tap action
         };
+        pin: pin_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "PIN_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <5000>;
+            quick-tap-ms = <0>; // Prevents accidental repeats
+            flavor = "tap-preferred"; // Ensures fast typing doesn't accidentally trigger Hold action
+            bindings = <&pin_macro>, <&kp>; // Hold action, then Tap action
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -37,8 +51,8 @@
             bindings = <
                 &ht F13 F13  &ht F14 F14  &ht F15 F15
                 &ht F16 F16  &ht F17 F17  &ht F18 F18
-                &pt 0 F19  &ht F20 F20  &ht F21 F21
-                &kp F22  &ht F23 F23  &ht SPACE F24
+                &pair 0 F19  &ht F20 F20  &ht F21 F21
+                &kp F22  &ht F23 F23  &pin 0 F24
             >;
         };
     };
