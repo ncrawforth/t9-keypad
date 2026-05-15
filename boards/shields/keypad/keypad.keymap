@@ -13,7 +13,7 @@
         pin_macro: pin_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N7>, <&kp N2>, <&kp N9>, <&kp N7>;
+            bindings = <&kp SPACE>, <&kp N7>, <&kp N2>, <&kp N9>, <&kp N7>;
         };
     };
     behaviors {
